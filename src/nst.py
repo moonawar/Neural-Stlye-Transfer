@@ -11,7 +11,8 @@ os.environ['TFHUB_MODEL_LOAD_FORMAT'] = 'COMPRESSED'
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
 
-nst_model = hub.load('https://tfhub.dev/google/magenta/arbitrary-image-stylization-v1-256/2')
+handle = 'https://tfhub.dev/google/magenta/arbitrary-image-stylization-v1-256/2'
+nst_model = hub.load(handle)
 
 # Run the pre-trained model
 def stylize(content_img, style_img):
